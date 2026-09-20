@@ -1,5 +1,6 @@
 {
+  "type": "module",
   "dependencies": {
-    "@google/genai": "^1.0.0"
+    "@google/genai": "^1.52.0"
   }
 }
