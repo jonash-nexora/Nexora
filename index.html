@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080b12">
+
+  <title>NEXORA AI</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+      <div class="brand">
+        <div class="brand-icon">N</div>
+        <div>
+          <h1>NEXORA</h1>
+          <span>AI ASSISTANT</span>
+        </div>
+      </div>
+
+      <button class="new-chat" id="newChatButton">
+        <span>＋</span>
+        New Chat
+      </button>
+
+      <div class="chat-history">
+        <p class="section-title">RECENT CHATS</p>
+
+        <div id="historyList">
+          <!-- Chat history will be added by JavaScript -->
+        </div>
+      </div>
+
+      <div class="sidebar-bottom">
+        <button class="side-button" id="settingsButton">
+          ⚙️
+          <span>Settings</span>
+        </button>
+
+        <div class="version">
+          NEXORA AI<br>
+          <span>v1.0</span>
+        </div>
+      </div>
+
+    </aside>
+
+
+    <!-- MAIN CHAT -->
+    <main class="chat">
+
+      <!-- TOP BAR -->
+      <header class="topbar">
+
+        <button class="menu-button" id="menuButton">
+          ☰
+        </button>
+
+        <div class="ai-status">
+          <div class="status-dot"></div>
+
+          <div>
+            <strong>NEXORA</strong>
+            <span id="statusText">AI is ready</span>
+          </div>
+        </div>
+
+        <button class="clear-button" id="clearButton" title="Clear chat">
+          🗑️
+        </button>
+
+      </header>
+
+
+      <!-- MESSAGES -->
+      <section class="messages" id="messages">
+
+        <!-- Welcome screen -->
+        <div class="welcome" id="welcome">
+
+          <div class="welcome-icon">
+            N
+          </div>
+
+          <h2>Welcome to NEXORA</h2>
+
+          <p>
+            Your intelligent AI assistant powered by Gemini.
+          </p>
+
+          <div class="suggestions">
+
+            <button class="suggestion">
+              💡 Give me an idea
+            </button>
+
+            <button class="suggestion">
+              ✍️ Help me write something
+            </button>
+
+            <button class="suggestion">
+              🧠 Explain something
+            </button>
+
+            <button class="suggestion">
+              💻 Help me code
+            </button>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- INPUT AREA -->
+      <footer class="input-area">
+
+        <div class="input-box">
+
+          <textarea
+            id="messageInput"
+            placeholder="Message NEXORA..."
+            rows="1"
+            autocomplete="off"
+          ></textarea>
+
+          <button id="sendButton" class="send-button" title="Send">
+            ➤
+          </button>
+
+        </div>
+
+        <div class="input-info">
+          <span>Powered by Gemini</span>
+          <span>•</span>
+          <span>NEXORA AI</span>
+        </div>
+
+      </footer>
+
+    </main>
+
+  </div>
+
+
+  <!-- SETTINGS MODAL -->
+  <div class="modal hidden" id="settingsModal">
+
+    <div class="modal-box">
+
+      <div class="modal-header">
+        <h2>Settings</h2>
+
+        <button id="closeSettings">
+          ✕
+        </button>
+      </div>
+
+      <div class="setting">
+
+        <div>
+          <strong>AI Name</strong>
+          <p>NEXORA</p>
+        </div>
+
+      </div>
+
+      <div class="setting">
+
+        <div>
+          <strong>Model</strong>
+          <p>Gemini</p>
+        </div>
+
+      </div>
+
+      <div class="setting">
+
+        <div>
+          <strong>Theme</strong>
+          <p>Dark</p>
+        </div>
+
+      </div>
+
+      <button class="close-modal" id="closeSettingsButton">
+        Done
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
