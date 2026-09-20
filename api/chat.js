@@ -5,39 +5,36 @@ const ai = new GoogleGenAI({
 });
 
 export default async function handler(req, res) {
-
   if (req.method !== "POST") {
     return res.status(405).json({
-      error: "Only POST requests are allowed"
+      error: "Only POST is allowed"
     });
   }
 
   try {
-
     const { message } = req.body;
 
     if (!message) {
       return res.status(400).json({
-        error: "No message was provided"
+        error: "Message is missing"
       });
     }
 
-    const response = await ai.models.generateContent({
-      model: "gemini-2.5-flash",
+    const result = await ai.models.generateContent({
+      model: "gemini-3.8-flash",
       contents: message
     });
 
-    res.status(200).json({
-      reply: response.text
+    return res.status(200).json({
+      reply: result.text
     });
 
   } catch (error) {
+    console.error("Gemini error:", error);
 
-    console.error(error);
-
-    res.status(500).json({
-      error: "NEXORA could not contact Gemini."
+    return res.status(500).json({
+      error: "Gemini request failed",
+      details: error.message
     });
-
   }
 }
